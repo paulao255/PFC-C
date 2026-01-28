@@ -1,0 +1,12 @@
+cmake_minimum_required(VERSION 4.2.2)
+project(Calc-C LANGUAGES C VERSION 20260128)
+set(CMAKE_C_STANDARD 90) # 90 for C89, 99 for C99, 11 for C11, 17 for C17 and 23 for C23.
+set(CMAKE_C_STANDARD_REQUIRED ON)
+set(CMAKE_C_EXTENSIONS OFF)
+set(CMAKE_C_FLAGS "-fdiagnostics-color=always -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wsign-conversion -Wformat=2 -Wnull-dereference -Wstrict-prototypes -Wmissing-prototypes -Wcast-align -Wpointer-arith -Wundef -v -O3 -funroll-loops -flto -mtune=native -march=native")
+include(FetchContent)
+FetchContent_Declare(C-Utils GIT_REPOSITORY https://github.com/paulao255/C-Utils.git GIT_TAG main)
+FetchContent_MakeAvailable(C-Utils)
+add_executable(pfc ../src/Main.c)
+target_link_libraries(pfc PRIVATE C-Utils::C-Utils)
+set_target_properties(pfc PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
