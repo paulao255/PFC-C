@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 4.2.2)
-project(Calc-C LANGUAGES C VERSION 20260128)
+cmake_minimum_required(VERSION 4.2.3)
+project(Calc-C LANGUAGES C VERSION 20260131)
 set(CMAKE_C_STANDARD 90) # 90 for C89, 99 for C99, 11 for C11, 17 for C17 and 23 for C23.
 set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_C_EXTENSIONS OFF)
